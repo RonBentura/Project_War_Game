@@ -12,6 +12,9 @@ class DeckOfCards:
                 new_card = Card(shape, i)
                 self.list1.append(new_card)
 
+    def cards_shuffle(self):
+        shuffle(self.list1)
+
     def deal_one(self):
         x = randint(0, len(self.list1))
         self.list1.pop(x)
