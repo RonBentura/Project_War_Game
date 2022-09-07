@@ -5,6 +5,9 @@ from random import shuffle
 class DeckOfCards:
 
     def __init__(self):
+        """method that takes the Card class and make a deck of cards
+        by a form of 52 cards in 4 different shape,
+        13 cards in each shape"""
         self.d1 = {'diamond': 1, 'spade': 2, 'heart': 3, 'club': 4}
         self.list1 = []
         for shape in self.d1.keys():
@@ -13,20 +16,17 @@ class DeckOfCards:
                 self.list1.append(new_card)
 
     def cards_shuffle(self):
+        """method that shuffle the deck"""
         shuffle(self.list1)
 
     def deal_one(self):
+        """method that deal one of the cards from the deck"""
         x = randint(0, len(self.list1))
         self.list1.pop(x)
 
+    def __repr__(self):
+        return f"{self.d1}, {self.list1}"
 
-
-
-
-
-
-
-
-
-    def cadrs_shuffle(self):
-        shuffle()
+if __name__ == '__main__':
+    deck = DeckOfCards()
+    print(deck)
